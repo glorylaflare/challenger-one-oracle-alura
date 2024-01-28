@@ -3,6 +3,7 @@
 :root[data-theme="light"] {
     --cor-branco: #FFFFFF;
     --cor-azul: #0A3871;
+    --cor-cinza-escuro: #343A40;
 }
 
 * {
@@ -29,8 +30,92 @@ body {
     display: flex;
     gap: 3rem;
     font-size: 1.2rem;
-    font-weight: 600;
     list-style: none;
 }
 
 /* Conteúdo */
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 1.5rem;
+}
+
+.conteudo__decodificador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.conteudo__decodificador__texto {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.conteudo__decodificador__texto__area {
+    padding: .5rem;
+    resize: none;
+    border: none;
+    font-size: 1.1rem;
+    color: var(--cor-azul);
+}
+
+.conteudo__decodificador__aviso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .3rem;
+    font-size: .9rem;
+    color: var(--cor-cinza-escuro);
+}
+
+.conteudo__decodificador__botoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.conteudo__decodificador__botao {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    border-width: .1rem;
+    border-style: solid;
+    font-size: 1rem;
+}
+.conteudo__decodificador__botao.criptografar {
+    background-color: var(--cor-azul);
+    border-color: var(--cor-azul);
+    color: var(--cor-branco);
+}
+.conteudo__decodificador__botao.descriptografar {
+    background-color: var(--cor-branco);
+    border-color: var(--cor-azul);
+    color: var(--cor-azul);
+}
+
+.conteudo__texto__decodificado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    gap: 1rem;
+    box-shadow: 0 1.5rem 2rem -.5rem rgba(0, 0, 0, 0.25);
+}
+
+.conteudo__texto__decodificado__titulo {
+    line-height: 1.8rem;
+}
+
+.conteudo__texto__decodificado__conteudo {
+    font-size: 1rem;
+}
