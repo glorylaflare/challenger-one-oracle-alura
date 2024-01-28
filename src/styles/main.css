@@ -93,20 +93,27 @@ body {
     width: 100%;
 }
 
-.conteudo__decodificador__botao {
+.conteudo__decodificador__botao,
+.conteudo__texto__decodificado__resultado__copiar {
     width: 100%;
     padding: 1rem;
     border-radius: 1.5rem;
     border-width: .1rem;
     border-style: solid;
     font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .3rem;
 }
 .conteudo__decodificador__botao.criptografar {
     background-color: var(--cor-azul);
     border-color: var(--cor-azul);
     color: var(--cor-branco);
 }
-.conteudo__decodificador__botao.descriptografar {
+.conteudo__decodificador__botao.descriptografar,
+.conteudo__texto__decodificado__resultado__copiar {
     background-color: var(--cor-branco);
     border-color: var(--cor-azul);
     color: var(--cor-azul);
@@ -132,6 +139,17 @@ body {
     font-size: 1rem;
 }
 
+.conteudo__texto__decodificado__resultado {
+    display: flex;
+    text-align: start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.conteudo__texto__decodificado__resultado__texto {
+    margin-bottom: 1.5rem;
+}
+
 /* FAQ */
 .conteudo__faq {
     display: flex;
@@ -152,4 +170,61 @@ body {
 .conteudo__faq__perguntas__resposta {
     font-size: .8rem;
     margin-bottom: .5rem;
+}
+
+/* Rodapé */
+.rodape {
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.rodape__logo img {
+    width: 1.5rem;
+}
+
+.rodape__contatos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rodape__redes__sociais {
+    display: flex;
+    flex-direction: column;
+}
+
+.redes__sociais__titulo {
+    font-size: .9rem;   
+}
+
+.redes__sociais__botoes {
+    display: flex;
+    gap: .6rem;
+    list-style: none;
+}
+
+.rede__sociais__botao {
+    padding: .25rem .5rem;
+    background-color: transparent;
+    border-width: .05rem;
+    border-style: solid;
+    border-color: #000000;
+}
+
+.rede__sociais__botao > a {
+    color: #000000;
+}
+
+.rodape__contato__titulo {
+    font-size: .9rem;
+}
+
+.rodape__contato__email {
+    font-size: .8rem;
+}
+
+.rodape__copyright {
+    font-size: .55rem;
 }
