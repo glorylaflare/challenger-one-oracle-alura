@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 :root[data-theme="light"] {
-    --cor-branco: #FFFFFF;
-    --cor-azul: #0A3871;
-    --cor-cinza-medio: #495057;
-    --cor-cinza-escuro: #343A40;
-    --cor-azul-claro: #d0edf7;
+    --cor-1: #FFFFFF;
+    --cor-2: #0A3871;
+    --cor-3: #495057;
+    --cor-4: #343A40;
+    --cor-5: #d0edf7;
+}
+
+:root[data-theme="dark"] {
+    --cor-1: #141414;
+    --cor-2: #e4e4e4;
+    --cor-3: #495057;
+    --cor-4: #343A40;
+    --cor-5: #0a0a0a;
 }
 
 * {
@@ -16,31 +24,41 @@
 }
 
 body {
-    background-color: var(--cor-branco);
+    background-color: var(--cor-1);
+}
+
+h1,h2,h3 {
+    color: var(--cor-4);
 }
 
 /* Cabeçalho */
 .cabecalho {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 1.5rem;
-    color: var(--cor-azul);
+    color: var(--cor-2);
+}
+
+svg path {
+    fill: var(--cor-2);
 }
 
 .cabecalho__menu__opcoes {
     display: flex;
+    align-items: center;
     gap: 2rem;
     font-size: 1rem;
     list-style: none;
+    user-select: none;
 }
 
 .cabecalho__menu__opcoes__item {
     cursor: pointer;
 }
 .cabecalho__menu__opcoes__item > .material-symbols-outlined {
-    background-color: var(--cor-azul-claro);
-    padding: .2rem;
+    background-color: var(--cor-5);
+    padding: .4rem;
     border-radius: .5rem;
     margin-left: -.7rem;
     cursor: pointer;
@@ -73,7 +91,8 @@ body {
     resize: none;
     border: none;
     font-size: 1.1rem;
-    color: var(--cor-azul);
+    color: var(--cor-2);
+    background-color: var(--cor-1);
 }
 
 .conteudo__decodificador__aviso {
@@ -82,7 +101,7 @@ body {
     justify-content: center;
     gap: .3rem;
     font-size: .9rem;
-    color: var(--cor-cinza-escuro);
+    color: var(--cor-4);
 }
 
 .conteudo__decodificador__botoes {
@@ -109,15 +128,15 @@ body {
     gap: .3rem;
 }
 .conteudo__decodificador__botao.criptografar {
-    background-color: var(--cor-azul);
-    border-color: var(--cor-azul);
-    color: var(--cor-branco);
+    background-color: var(--cor-2);
+    border-color: var(--cor-2);
+    color: var(--cor-1);
 }
 .conteudo__decodificador__botao.descriptografar,
 .conteudo__texto__decodificado__resultado__copiar {
-    background-color: var(--cor-branco);
-    border-color: var(--cor-azul);
-    color: var(--cor-azul);
+    background-color: var(--cor-1);
+    border-color: var(--cor-2);
+    color: var(--cor-2);
 }
 
 .conteudo__texto__decodificado__div {
@@ -129,7 +148,7 @@ body {
     border-radius: 2rem;
     text-align: center;
     gap: 1rem;
-    box-shadow: 0 .8rem 3rem -.5rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 .8rem 3rem -.5rem rgba(0, 0, 0, 0.20);
 }
 
 .conteudo__texto__decodificado__titulo {
@@ -138,7 +157,7 @@ body {
 
 .conteudo__texto__decodificado__conteudo {
     font-size: 1rem;
-    color: var(--cor-cinza-medio);
+    color: var(--cor-3);
 }
 
 .conteudo__texto__decodificado__resultado {
@@ -149,7 +168,7 @@ body {
 }
 
 .conteudo__texto__decodificado__resultado__texto {
-    color: var(--cor-cinza-medio);
+    color: var(--cor-3);
     margin-bottom: 1.5rem;
 }
 
@@ -159,7 +178,7 @@ body {
     flex-direction: column;
     margin: 0 -1.5rem;
     padding: 1.5rem;
-    background-color: var(--cor-azul-claro);
+    background-color: var(--cor-5);
     gap: 1.5rem;
 }
 
@@ -173,6 +192,7 @@ body {
 .conteudo__faq__perguntas__resposta {
     font-size: .8rem;
     margin-bottom: .5rem;
+    color: var(--cor-4);
 }
 
 /* Rodapé */
@@ -181,9 +201,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    color: var(--cor-4);
 }
 
-.rodape__logo img {
+.rodape__logo svg {
     width: 1.5rem;
 }
 
@@ -213,11 +234,11 @@ body {
     background-color: transparent;
     border-width: .05rem;
     border-style: solid;
-    border-color: #000000;
+    border-color: var(--cor-4);
 }
 
 .rede__sociais__botao > a {
-    color: #000000;
+    color: var(--cor-4);
 }
 
 .rodape__contato__titulo {
