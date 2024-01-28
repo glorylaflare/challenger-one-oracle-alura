@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root[data-theme="light"] {
+    --cor-branco: #FFFFFF;
+    --cor-azul: #0A3871;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--cor-branco);
+}
+
+/* Cabeçalho */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    color: var(--cor-azul);
+}
+
+.cabecalho__menu__opcoes {
+    display: flex;
+    gap: 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    list-style: none;
+}
+
+/* Conteúdo */
