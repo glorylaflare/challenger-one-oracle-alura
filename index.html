@@ -9,7 +9,7 @@
 <body>
     <header class="cabecalho">
         <div class="cabecalho__logo">
-            <img src="./public/assets/images/alura-logo.svg" alt="alura logo">
+            <img src="./public/assets/images/alura-logo.svg" alt="logo da alura">
         </div>
         <div>
             <nav>
@@ -22,5 +22,37 @@
             </nav>
         </div>
     </header>
+    <main class="conteudo">
+        <div class="conteudo__decodificador">
+            <div class="conteudo__decodificador__texto">
+                <textarea 
+                name="area-do-texto"
+                class="conteudo__decodificador__texto__area" 
+                id="area-do-texto" 
+                cols="40" 
+                rows="12"
+                placeholder="Digite seu texto aqui..."></textarea>
+                <p class="conteudo__decodificador__aviso">
+                    <img src="./public/assets/images/aviso.svg" alt="símbolo de aviso">
+                    Apenas letras minúsculas e sem acento.
+                </p>
+            </div>
+            <div class="conteudo__decodificador__botoes">
+                <button class="conteudo__decodificador__botao criptografar">
+                    Criptografar</button>
+                <button class="conteudo__decodificador__botao descriptografar">
+                    Descriptografar</button>
+            </div>
+        </div>
+        <div>
+            <div class="conteudo__texto__decodificado" id="texto-decodificado">
+                <h2 class="conteudo__texto__decodificado__titulo">
+                    Nenhuma mensagem encontrada</h2>
+                <p class="conteudo__texto__decodificado__conteudo">
+                    Digite um texto que você deseja criptografar ou descriptografar.</p>
+            </div>
+        </div>
+    </main>
+    <footer class="rodape"></footer>
 </body>
 </html>
