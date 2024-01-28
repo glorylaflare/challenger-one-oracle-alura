@@ -121,11 +121,11 @@ svg path {
     border-width: .1rem;
     border-style: solid;
     font-size: 1rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
     gap: .3rem;
+    cursor: pointer;
 }
 .conteudo__decodificador__botao.criptografar {
     background-color: var(--cor-2);
