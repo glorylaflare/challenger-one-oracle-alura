@@ -15,7 +15,7 @@
     --cor-3: #495057;
     --cor-4: #343A40;
     --cor-5: #0a0a0a;
-    --cor-6: #d8dfe8;
+    --cor-6: #272727;
 }
 
 * {
@@ -68,6 +68,10 @@ h1,h2 {
     border-radius: .5rem;
     margin-left: -.7rem;
     cursor: pointer;
+}
+
+.cabecalho__menu__opcoes__item:hover {
+    opacity: .8;
 }
 
 /* Conteúdo */
@@ -152,6 +156,14 @@ h1,h2 {
     background-color: var(--cor-1);
     border-color: var(--cor-2);
     color: var(--cor-2);
+}
+
+.conteudo__decodificador__botao.criptografar:hover {
+    opacity: .8;
+}
+.conteudo__decodificador__botao.descriptografar:hover,
+.conteudo__texto__decodificado__resultado__copiar:hover {
+    background-color: var(--cor-6);
 }
 
 .conteudo__texto__decodificado__div {
@@ -260,6 +272,11 @@ h1,h2 {
     border-width: .05rem;
     border-style: solid;
     border-color: var(--cor-4);
+    border-radius: 50%;
+}
+
+.rede__sociais__botao:hover {
+    opacity: .8;
 }
 
 .rede__sociais__botao > a {
