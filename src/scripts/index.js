@@ -40,6 +40,9 @@ const botaoCriptografar = document.querySelector("#btn-criptografar");
 const botaoDescriptografar = document.querySelector("#btn-descriptografar");
 const botaoCopiar = document.querySelector("#btn-copiar");
 const mostrarTexto = document.querySelector("#texto-decodificado");
+const mensagemAviso = document.querySelector("#texto-aviso");
+const svgAviso = document.querySelector(".svg__aviso path");
+
 let textoResultado;
 
 const arrayVogais = [
@@ -65,6 +68,21 @@ const arrayVogais = [
     },
 ];
 
+function editandoMensagemAviso(texto, tamanho, cor) {
+    mensagemAviso.innerText = texto;
+    mensagemAviso.style.fontSize = tamanho;
+    mensagemAviso.style.color = cor;
+    svgAviso.style.fill = cor;
+}
+
+function mostrarMensagemAviso(mensagem) {
+    editandoMensagemAviso(mensagem, "1.1rem", "red");
+
+    setTimeout(() => {
+        editandoMensagemAviso("Apenas letras minúsculas e sem acento.", ".9rem", "#343A40");
+    }, 3000)
+}
+
 function textoDecodificado(textoAlterado) {
     mostrarTexto.innerHTML = "";
     mostrarTexto.innerHTML += `
@@ -86,6 +104,7 @@ function textoDecodificado(textoAlterado) {
 
 function copiarTexto() {
     navigator.clipboard.writeText(textoResultado.innerText);
+    alert("Mensagem copiada com sucesso.");
 };
 
 function alteraTexto(parametro_de, parametro_para) {
@@ -101,9 +120,9 @@ function alteraTexto(parametro_de, parametro_para) {
                 const elemento = vogais[i][parametro_de];
                 texto = texto.replaceAll(elemento, vogais[i][parametro_para]);
             }
-            textoDecodificado(texto)
-        } else console.log("texto inválido"); // MOSTRAR AVISO NA TELA QUE O TEXTO POSSUI CARACTERES INVÁLIDOS
-    } else console.log("campo de texto vazio!"); // MOSTRAR AVISO QUE A CAIXA DE TEXTO ESTÁ VAZIA
+            textoDecodificado(texto);
+        } else mostrarMensagemAviso("Existe caracteres inválidos no texto."); // MOSTRAR AVISO NA TELA QUE O TEXTO POSSUI CARACTERES INVÁLIDOS
+    } else mostrarMensagemAviso("Você precisa inserir um texto."); // MOSTRAR AVISO QUE A CAIXA DE TEXTO ESTÁ VAZIA
 };
 
 botaoCriptografar.addEventListener("click", () => {
