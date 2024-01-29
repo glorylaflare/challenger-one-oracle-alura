@@ -38,10 +38,12 @@ toggle.addEventListener("click", mudarTema);
 
 const botaoCriptografar = document.querySelector("#btn-criptografar");
 const botaoDescriptografar = document.querySelector("#btn-descriptografar");
+const botaoLimpar = document.querySelector("#btn-limpar");
 const botaoCopiar = document.querySelector("#btn-copiar");
 const mostrarTexto = document.querySelector("#texto-decodificado");
 const mensagemAviso = document.querySelector("#texto-aviso");
 const svgAviso = document.querySelector(".svg__aviso path");
+const areaDoTexto = document.querySelector("#area-do-texto");
 
 let textoResultado;
 
@@ -73,15 +75,15 @@ function editarMensagemAviso(texto, tamanho, cor) {
     mensagemAviso.style.fontSize = tamanho;
     mensagemAviso.style.color = cor;
     svgAviso.style.fill = cor;
-}
+};
 
 function mostrarMensagemAviso(mensagem) {
-    editarMensagemAviso(mensagem, "1.1rem", "red");
+    editarMensagemAviso(mensagem, "1.1rem", "#D04848");
 
     setTimeout(() => {
         editarMensagemAviso("Apenas letras minúsculas e sem acento.", ".9rem", "#343A40");
     }, 3000)
-}
+};
 
 function textoDecodificado(textoAlterado) {
     mostrarTexto.innerHTML = "";
@@ -108,7 +110,7 @@ function copiarTexto() {
 };
 
 function alteraTexto(parametro_de, parametro_para) {
-    let texto = document.querySelector("#area-do-texto").value;
+    let texto = areaDoTexto.value;
     const verificaMinusculas = /^[a-z ]+$/;
 
     if(texto) {
@@ -121,8 +123,8 @@ function alteraTexto(parametro_de, parametro_para) {
                 texto = texto.replaceAll(elemento, vogais[i][parametro_para]);
             }
             textoDecodificado(texto);
-        } else mostrarMensagemAviso("Existe caracteres inválidos no texto."); // MOSTRAR AVISO NA TELA QUE O TEXTO POSSUI CARACTERES INVÁLIDOS
-    } else mostrarMensagemAviso("Você precisa inserir um texto."); // MOSTRAR AVISO QUE A CAIXA DE TEXTO ESTÁ VAZIA
+        } else mostrarMensagemAviso("Existe caracteres inválidos no texto.");
+    } else mostrarMensagemAviso("Você precisa inserir um texto.");
 };
 
 botaoCriptografar.addEventListener("click", () => {
@@ -130,6 +132,16 @@ botaoCriptografar.addEventListener("click", () => {
 });
 botaoDescriptografar.addEventListener("click", () => {
     alteraTexto("replace", "vogal");
+});
+
+areaDoTexto.addEventListener("input", () => {
+    if(areaDoTexto.value.length > 0) botaoLimpar.style.display = "block";
+    else botaoLimpar.style.display = "none";
+});
+
+botaoLimpar.addEventListener("click", () => {
+    document.querySelector("#area-do-texto").value = "";
+    botaoLimpar.style.display = "none";
 });
 
 document.addEventListener("click", (e) => {
