@@ -264,6 +264,7 @@ h1,h2 {
     text-align: start;
     justify-content: flex-start;
     flex-direction: column;
+    width: 95vw;
 
     padding: 2rem;
     border-radius: 2rem;
