@@ -1,4 +1,9 @@
-// Scroll to...
+/*
+1. Método para rolagem automática ao clicar no elemento Dúvidas do cabeçalho
+2. Função para mudar o data-theme de "light" para "dark" e vice-versa
+3. Funções para criptografar e descriptografar texto
+*/
+
 const scrollToFaq = document.querySelector("#scroll-to-faq");
 
 scrollToFaq.addEventListener("click", () => {
@@ -6,10 +11,9 @@ scrollToFaq.addEventListener("click", () => {
     if(target) target.scrollIntoView({ behavior: "smooth" });
 });
 
-// Toggle
 const toggle = document.querySelector("#toggle-mode");
 
-const switchTheme = () => {
+function switchTheme() {
     const rootElem = document.documentElement;
     let dataTheme = rootElem.getAttribute("data-theme"),
     newTheme;
@@ -34,9 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 toggle.addEventListener("click", switchTheme);
 
-// Criptografar e Descriptografar
 const botaoCriptografar = document.querySelector("#btn-criptografar");
 const botaoDescriptografar = document.querySelector("#btn-descriptografar");
+const botaoCopiar = document.querySelector("#btn-copiar");
+const mostrarTexto = document.querySelector("#texto-decodificado");
+let textoResultado;
 
 const arrayVogais = [
     {
@@ -61,6 +67,29 @@ const arrayVogais = [
     },
 ];
 
+function textoDecodificado(textoAlterado) {
+    mostrarTexto.innerHTML = "";
+    mostrarTexto.innerHTML += `
+    <div class="conteudo__texto__decodificado__resultado">
+        <p class="conteudo__texto__decodificado__resultado__texto" id="texto-resultado">
+            ${textoAlterado}
+        </p>
+        <button class="conteudo__texto__decodificado__resultado__copiar" id="btn-copiar">
+            <span class="material-symbols-outlined">
+                copy_all
+            </span>
+            Copiar
+        </button>
+    </div>
+    `;
+
+    textoResultado = document.querySelector("#texto-resultado");
+};
+
+function copiarTexto() {
+    navigator.clipboard.writeText(textoResultado.innerText);
+};
+
 function alteraTexto(parametro_de, parametro_para) {
     let texto = document.querySelector("#area-do-texto").value;
     const verificaMinusculas = /^[a-z]+$/;
@@ -72,18 +101,22 @@ function alteraTexto(parametro_de, parametro_para) {
             }) // A constante "vogais" gera um array de objetos
             for (let i = 0; i < vogais.length; i++) {
                 const elemento = vogais[i][parametro_de];
-                const regex = new RegExp(elemento, "g");
-                texto = texto.replace(regex, vogais[i][parametro_para]);
+                texto = texto.replaceAll(elemento, vogais[i][parametro_para]);
             }
-            // MOSTRAR RESULTADO NA TELA
-            console.log(texto);
+            textoDecodificado(texto)
         } else console.log("texto inválido"); // MOSTRAR AVISO NA TELA QUE O TEXTO POSSUI CARACTERES INVÁLIDOS
-    } else console.log("campo de texto vazio!"); // MOSTRAR QUE A CAIXA DE TEXTO ESTÁ VAZIA
-}
+    } else console.log("campo de texto vazio!"); // MOSTRAR AVISO QUE A CAIXA DE TEXTO ESTÁ VAZIA
+};
 
 botaoCriptografar.addEventListener("click", () => {
     alteraTexto("vogal", "replace");
 });
 botaoDescriptografar.addEventListener("click", () => {
     alteraTexto("replace", "vogal");
+});
+
+document.addEventListener("click", (e) => {
+    if (e.target && e.target.id === "btn-copiar") {
+        copiarTexto();
+    }
 });
