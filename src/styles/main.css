@@ -31,8 +31,12 @@ h1,h2 {
     color: var(--cor-4);
 }
 
-svg path {
+.svg__logo path {
     fill: var(--cor-2);
+}
+
+.svg__aviso path {
+    fill: var(--cor-4);
 }
 
 /* Cabeçalho */
@@ -211,7 +215,7 @@ svg path {
     color: var(--cor-4);
 }
 
-.rodape__logo svg {
+.rodape__logo .svg__logo {
     width: 1.5rem;
 }
 
