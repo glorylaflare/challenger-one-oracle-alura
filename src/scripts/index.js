@@ -1,7 +1,7 @@
 /*
-1. Método para rolagem automática ao clicar no elemento Dúvidas do cabeçalho
-2. Função para mudar o data-theme de "light" para "dark" e vice-versa
-3. Funções para criptografar e descriptografar texto
+    1. Método para rolagem automática ao clicar no elemento Dúvidas do cabeçalho
+    2. Função para mudar o data-theme de "light" para "dark" e vice-versa
+    3. Funções para criptografar e descriptografar texto
 */
 
 const scrollToFaq = document.querySelector("#scroll-to-faq");
@@ -13,14 +13,12 @@ scrollToFaq.addEventListener("click", () => {
 
 const toggle = document.querySelector("#toggle-mode");
 
-function switchTheme() {
-    const rootElem = document.documentElement;
-    let dataTheme = rootElem.getAttribute("data-theme"),
-    newTheme;
+function mudarTema() {
+    let dataTheme = document.documentElement.getAttribute("data-theme"), newTheme;
 
     newTheme = dataTheme === "light" ? "dark" : "light";
 
-    rootElem.setAttribute("data-theme", newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -36,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-toggle.addEventListener("click", switchTheme);
+toggle.addEventListener("click", mudarTema);
 
 const botaoCriptografar = document.querySelector("#btn-criptografar");
 const botaoDescriptografar = document.querySelector("#btn-descriptografar");
@@ -116,7 +114,5 @@ botaoDescriptografar.addEventListener("click", () => {
 });
 
 document.addEventListener("click", (e) => {
-    if (e.target && e.target.id === "btn-copiar") {
-        copiarTexto();
-    }
+    if (e.target && e.target.id === "btn-copiar") copiarTexto();
 });
