@@ -7,15 +7,17 @@
     --cor-4: #343A40;
     --cor-5: #d0edf7;
     --cor-6: #d8dfe8;
+    --cor-7: #db9224;
 }
 
 :root[data-theme="dark"] {
     --cor-1: #141414;
     --cor-2: #e4e4e4;
     --cor-3: #495057;
-    --cor-4: #343A40;
+    --cor-4: #8293a1;
     --cor-5: #0a0a0a;
     --cor-6: #272727;
+    --cor-7: #f0eed6;
 }
 
 * {
@@ -62,9 +64,11 @@ h1,h2 {
 .cabecalho__menu__opcoes__item {
     cursor: pointer;
 }
-.cabecalho__menu__opcoes__item > .material-symbols-outlined {
+.cabecalho__menu__opcoes__item.toggle {
     background-color: var(--cor-5);
     padding: .4rem;
+    width: 2.3rem;
+    height: 2.3rem;
     border-radius: .5rem;
     margin-left: -.7rem;
     cursor: pointer;
@@ -72,6 +76,19 @@ h1,h2 {
 
 .cabecalho__menu__opcoes__item:hover {
     opacity: .8;
+    transition: .3s ease-in;
+}
+.cabecalho__menu__opcoes__item > .material-symbols-outlined:hover {
+    animation: girar 3s linear infinite;
+    color: var(--cor-7);
+}
+
+@keyframes girar {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(10deg);}
+    50% { transform: rotate(0deg);}
+    75% { transform: rotate(10deg);}
+    100% { transform: rotate(0deg);}
 }
 
 /* Conteúdo */
@@ -160,10 +177,12 @@ h1,h2 {
 
 .conteudo__decodificador__botao.criptografar:hover {
     opacity: .8;
+    transition: .3s ease-in;
 }
 .conteudo__decodificador__botao.descriptografar:hover,
 .conteudo__texto__decodificado__resultado__copiar:hover {
     background-color: var(--cor-6);
+    transition: .3s ease-in;
 }
 
 .conteudo__texto__decodificado__div {
@@ -277,6 +296,7 @@ h1,h2 {
 
 .rede__sociais__botao:hover {
     opacity: .8;
+    transition: .3s ease-in;
 }
 
 .rede__sociais__botao > a {
