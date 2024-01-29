@@ -68,7 +68,7 @@ const arrayVogais = [
     },
 ];
 
-function editandoMensagemAviso(texto, tamanho, cor) {
+function editarMensagemAviso(texto, tamanho, cor) {
     mensagemAviso.innerText = texto;
     mensagemAviso.style.fontSize = tamanho;
     mensagemAviso.style.color = cor;
@@ -76,10 +76,10 @@ function editandoMensagemAviso(texto, tamanho, cor) {
 }
 
 function mostrarMensagemAviso(mensagem) {
-    editandoMensagemAviso(mensagem, "1.1rem", "red");
+    editarMensagemAviso(mensagem, "1.1rem", "red");
 
     setTimeout(() => {
-        editandoMensagemAviso("Apenas letras minúsculas e sem acento.", ".9rem", "#343A40");
+        editarMensagemAviso("Apenas letras minúsculas e sem acento.", ".9rem", "#343A40");
     }, 3000)
 }
 
