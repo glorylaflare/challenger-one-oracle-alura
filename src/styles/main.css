@@ -72,8 +72,14 @@ h1,h2 {
 .conteudo {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
     padding: 1.5rem;
+}
+
+.conteudo__div {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
 
 .conteudo__decodificador {
@@ -104,8 +110,10 @@ h1,h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: .5rem 0;
     gap: .3rem;
     font-size: .9rem;
+    line-height: 1.1rem;
     color: var(--cor-4);
 }
 
@@ -154,7 +162,7 @@ h1,h2 {
     border-radius: 2rem;
     text-align: center;
     gap: 1rem;
-    box-shadow: 0 .8rem 3rem -.5rem rgba(0, 0, 0, 0.20);
+    box-shadow: 0 .8rem 10rem -1rem rgba(0, 0, 0, 0.15);
 }
 
 .conteudo__texto__decodificado__titulo {
@@ -279,21 +287,63 @@ h1,h2 {
         min-height: 7rem;
     }
 
-    .redes__sociais__titulo,
-    .rodape__contato__titulo {
-        font-size: 1rem; 
-    }
-
     .rodape__contatos {
         gap: 12rem;
         flex-direction: row;
     }
 
-    .rodape__contato__email {
+    .rodape__copyright {
+        font-size: .7rem;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .conteudo__div {
+        flex-direction: row;
+    }
+
+    .conteudo__decodificador {
+        width: 60%;
+        margin-left: 10rem;
+    }
+
+    .conteudo__decodificador__texto__area {
+        width: 100vh;
+    }
+
+    .conteudo__decodificador__botoes {
+        width: 100vh;
+    }
+
+    .conteudo__texto__decodificado__div {
+        height: 28rem;
+        width: 17rem;
+    }
+
+    .conteudo__texto__decodificado__resultado__texto {
+        min-height: 7rem;
+    }
+
+    .conteudo__texto__decodificado__titulo::before {
+        content: '';
+        display: block;
+        width: 12rem;
+        height: 12rem;
+        background-image: url("../../public/assets/images/procura.svg");
+        background-size: cover;
+        margin-bottom: 2rem;
+    }
+
+    .conteudo__texto__decodificado__titulo {
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+    }
+
+    .conteudo__texto__decodificado__conteudo {
         font-size: .9rem;
     }
 
-    .rodape__copyright {
-        font-size: .7rem;
+    .rodape__contatos {
+        gap: 18rem;
     }
 }
