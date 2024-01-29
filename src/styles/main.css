@@ -6,6 +6,7 @@
     --cor-3: #495057;
     --cor-4: #343A40;
     --cor-5: #d0edf7;
+    --cor-6: #d8dfe8;
 }
 
 :root[data-theme="dark"] {
@@ -14,6 +15,7 @@
     --cor-3: #495057;
     --cor-4: #343A40;
     --cor-5: #0a0a0a;
+    --cor-6: #d8dfe8;
 }
 
 * {
@@ -273,6 +275,21 @@ h1,h2 {
     margin-bottom: 1rem;
 }
 
+/* Barra de rolagem personalizada */
+::-webkit-scrollbar {
+    width: .3rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cor-5);
+    border-radius: 5rem;   
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cor-2);
+    border-radius: 5rem;
+}
+
 @media only screen and (min-width: 768px) {
     .conteudo__decodificador__aviso {
         padding: 0 .5rem;
@@ -343,6 +360,12 @@ h1,h2 {
 
     .conteudo__texto__decodificado__conteudo {
         font-size: .9rem;
+    }
+
+    .conteudo__texto__decodificado__resultado__texto {
+        font-size: .8rem;
+        overflow-y: auto;
+        overflow-wrap: break-word;
     }
 
     .rodape__contatos {
