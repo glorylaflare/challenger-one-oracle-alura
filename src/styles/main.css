@@ -27,8 +27,12 @@ body {
     background-color: var(--cor-1);
 }
 
-h1,h2,h3 {
+h1,h2 {
     color: var(--cor-4);
+}
+
+svg path {
+    fill: var(--cor-2);
 }
 
 /* Cabeçalho */
@@ -38,10 +42,6 @@ h1,h2,h3 {
     justify-content: space-between;
     padding: 1.5rem;
     color: var(--cor-2);
-}
-
-svg path {
-    fill: var(--cor-2);
 }
 
 .cabecalho__menu__opcoes {
@@ -144,6 +144,7 @@ svg path {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     padding: 2rem;
     border-radius: 2rem;
     text-align: center;
@@ -165,11 +166,17 @@ svg path {
     text-align: start;
     justify-content: flex-start;
     flex-direction: column;
+
+    padding: 2rem;
+    border-radius: 2rem;
+    gap: 1rem;
+    box-shadow: 0 .6rem 1rem -.4rem rgba(0, 0, 0, 0.15);
 }
 
 .conteudo__texto__decodificado__resultado__texto {
-    color: var(--cor-3);
+    color: var(--cor-2);
     margin-bottom: 1.5rem;
+    min-height: 15rem;
 }
 
 /* FAQ */
