@@ -91,12 +91,13 @@ h1,h2 {
 }
 
 .conteudo__decodificador__texto__area {
-    padding: .5rem;
+    padding: .5rem .8rem;
     resize: none;
     border: none;
     font-size: 1.1rem;
     color: var(--cor-2);
     background-color: var(--cor-1);
+    width: 95vw;
 }
 
 .conteudo__decodificador__aviso {
@@ -217,6 +218,7 @@ h1,h2 {
 
 .rodape__logo .svg__logo {
     width: 1.5rem;
+    margin-bottom: -1rem;
 }
 
 .rodape__contatos {
@@ -230,14 +232,16 @@ h1,h2 {
     flex-direction: column;
 }
 
-.redes__sociais__titulo {
-    font-size: .9rem;   
+.redes__sociais__titulo,
+.rodape__contato__titulo {
+    font-size: .9rem; 
 }
 
 .redes__sociais__botoes {
     display: flex;
     gap: .6rem;
     list-style: none;
+    margin-top: .4rem;
 }
 
 .rede__sociais__botao {
@@ -252,14 +256,44 @@ h1,h2 {
     color: var(--cor-4);
 }
 
-.rodape__contato__titulo {
-    font-size: .9rem;
-}
-
 .rodape__contato__email {
     font-size: .8rem;
 }
 
 .rodape__copyright {
     font-size: .55rem;
+    margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .conteudo__decodificador__aviso {
+        padding: 0 .5rem;
+        justify-content: flex-start;
+    }
+
+    .conteudo__decodificador__botoes {
+        flex-direction: row;
+    }
+
+    .conteudo__texto__decodificado__resultado__texto {
+        min-height: 7rem;
+    }
+
+    .redes__sociais__titulo,
+    .rodape__contato__titulo {
+        font-size: 1rem; 
+    }
+
+    .rodape__contatos {
+        gap: 12rem;
+        flex-direction: row;
+    }
+
+    .rodape__contato__email {
+        font-size: .9rem;
+    }
+
+    .rodape__copyright {
+        font-size: .7rem;
+    }
 }
