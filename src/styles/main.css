@@ -118,6 +118,10 @@ h1,h2 {
     flex-direction: column;
 }
 
+.conteudo__decodificador__container__texto__area{
+    position: relative;
+}
+
 .conteudo__decodificador__texto__area {
     padding: .5rem .8rem;
     resize: none;
@@ -127,6 +131,23 @@ h1,h2 {
     background-color: var(--cor-1);
     width: 95vw;
     margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+
+.conteudo__decodificador__limpar {
+    position: absolute;
+    bottom: 2rem;
+    right: .5rem;
+    padding: .4rem .4rem 0 .4rem;
+    background-color: transparent;
+    border: .1rem solid var(--cor-2);
+    border-radius: .5rem;
+    cursor: pointer;
+    opacity: .7;
+}
+.conteudo__decodificador__limpar > .material-symbols-outlined {
+    color: var(--cor-2);
+    font-size: 1.3rem;
 }
 
 .conteudo__decodificador__aviso {
@@ -180,9 +201,11 @@ h1,h2 {
     transition: .3s ease-in;
 }
 .conteudo__decodificador__botao.descriptografar:hover,
-.conteudo__texto__decodificado__resultado__copiar:hover {
+.conteudo__texto__decodificado__resultado__copiar:hover,
+.conteudo__decodificador__limpar:hover {
     background-color: var(--cor-6);
     transition: .3s ease-in;
+    opacity: 1;
 }
 
 .conteudo__texto__decodificado__div {
