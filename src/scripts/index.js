@@ -109,7 +109,7 @@ function copiarTexto() {
 
 function alteraTexto(parametro_de, parametro_para) {
     let texto = document.querySelector("#area-do-texto").value;
-    const verificaMinusculas = /^[a-z]+$/;
+    const verificaMinusculas = /^[a-z ]+$/;
 
     if(texto) {
         if(verificaMinusculas.test(texto)) {
