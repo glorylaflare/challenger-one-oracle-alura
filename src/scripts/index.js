@@ -106,7 +106,12 @@ function textoDecodificado(textoAlterado) {
 
 function copiarTexto() {
     navigator.clipboard.writeText(textoResultado.innerText);
-    alert("Mensagem copiada com sucesso.");
+    
+    document.querySelector("#texto__copiado").style.display = "block";
+
+    setTimeout(() => {
+        document.querySelector("#texto__copiado").style.display = "none";
+    }, 1500);
 };
 
 function alteraTexto(parametro_de, parametro_para) {
