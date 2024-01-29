@@ -239,13 +239,14 @@ h1,h2 {
 
 .conteudo__texto__decodificado__div {
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 95vw;
 
     padding: 2rem;
     border-radius: 2rem;
-    text-align: center;
     gap: 1rem;
     box-shadow: 0 .8rem 10rem -1rem rgba(0, 0, 0, 0.15);
 }
