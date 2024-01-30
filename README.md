@@ -4,7 +4,7 @@ O projeto consiste em um website capaz de criptografar e descriptografar um text
 ### Sobre o projeto
 No projeto você pode transformar um texto comum em um texto criptografado, ou descriptografar esse texto codificado e resgatar o texto original. O projeto utiliza um sistema padrão de reconhecimento de letras para criptografar/descriptografar o texto.
 
-Como meu ponto forte não é UI/UX, eu preferi adicionar funcionalidades ao projeto, ao invés de mexer no layout padrão do [Figma](https://www.figma.com/file/tvFEYhVfZTjdJ5P24RGV21/Alura-Challenge---Desafio-1---L%C3%B3gica?node-id=16%3A802).
+Como meu ponto forte não é UI/UX, eu preferi adicionar funcionalidades ao projeto ao invés de mexer no layout padrão do [Figma](https://www.figma.com/file/tvFEYhVfZTjdJ5P24RGV21/Alura-Challenge---Desafio-1---L%C3%B3gica?node-id=16%3A802).
 
 Algumas funcionalidades do projeto:
 - Tema escuro
