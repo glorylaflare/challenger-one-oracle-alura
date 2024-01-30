@@ -48,26 +48,11 @@ const areaDoTexto = document.querySelector("#area-do-texto");
 let textoResultado;
 
 const arrayVogais = [
-    {
-        vogal: "a",
-        replace: "ai"
-    },
-    {
-        vogal: "e",
-        replace: "enter"
-    },
-    {
-        vogal: "i",
-        replace: "imes"
-    },
-    {
-        vogal: "o",
-        replace: "ober"
-    },
-    {
-        vogal: "u",
-        replace: "ufat"
-    },
+    { vogal: "e", replace: "enter" },
+    { vogal: "i", replace: "imes" },
+    { vogal: "a", replace: "ai" },
+    { vogal: "o", replace: "ober" },
+    { vogal: "u", replace: "ufat" },
 ];
 
 function editarMensagemAviso(texto, tamanho, cor) {
@@ -115,7 +100,7 @@ function copiarTexto() {
 };
 
 function alteraTexto(parametro_de, parametro_para) {
-    let texto = areaDoTexto.value;
+    let texto = areaDoTexto.value, novoTexto = texto;
     const verificaMinusculas = /^[a-z ]+$/;
 
     if(texto) {
@@ -125,9 +110,9 @@ function alteraTexto(parametro_de, parametro_para) {
             }) // A constante "vogais" gera um array de objetos
             for (let i = 0; i < vogais.length; i++) {
                 const elemento = vogais[i][parametro_de];
-                texto = texto.replaceAll(elemento, vogais[i][parametro_para]);
+                novoTexto = novoTexto.replaceAll(elemento, vogais[i][parametro_para]);
             }
-            textoDecodificado(texto);
+            textoDecodificado(novoTexto);
         } else mostrarMensagemAviso("Existe caracteres inválidos no texto.");
     } else mostrarMensagemAviso("Você precisa inserir um texto.");
 };
