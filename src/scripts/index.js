@@ -3,12 +3,15 @@
     2. Função para mudar o data-theme de "light" para "dark" e vice-versa
     3. Funções para criptografar e descriptografar texto
 */
-
 const scrollToFaq = document.querySelector("#scroll-to-faq");
 
-scrollToFaq.addEventListener("click", () => {
-    const target = document.getElementById("secao-faq");
+function scrollTo(id) {
+    const target = document.getElementById(id);
     if(target) target.scrollIntoView({ behavior: "smooth" });
+};
+
+scrollToFaq.addEventListener("click", () => {
+    scrollTo("secao-faq");
 });
 
 const toggle = document.querySelector("#toggle-mode");
@@ -67,13 +70,13 @@ function mostrarMensagemAviso(mensagem) {
 
     setTimeout(() => {
         editarMensagemAviso("Apenas letras minúsculas e sem acento.", ".9rem", "#343A40");
-    }, 3000)
+    }, 3000);
 };
 
 function textoDecodificado(textoAlterado) {
     mostrarTexto.innerHTML = "";
     mostrarTexto.innerHTML += `
-    <div class="conteudo__texto__decodificado__resultado">
+    <div class="conteudo__texto__decodificado__resultado" id="secao-resultado">
         <p class="conteudo__texto__decodificado__resultado__texto" id="texto-resultado">
             ${textoAlterado}
         </p>
@@ -107,7 +110,7 @@ function alteraTexto(parametro_de, parametro_para) {
         if(verificaMinusculas.test(texto)) {
             const vogais = arrayVogais.filter((vogal) => {
                 return texto.includes(vogal[parametro_de]);
-            }) // A constante "vogais" gera um array de objetos
+            }); // A constante "vogais" gera um array de objetos
             for (let i = 0; i < vogais.length; i++) {
                 const elemento = vogais[i][parametro_de];
                 novoTexto = novoTexto.replaceAll(elemento, vogais[i][parametro_para]);
@@ -119,9 +122,13 @@ function alteraTexto(parametro_de, parametro_para) {
 
 botaoCriptografar.addEventListener("click", () => {
     alteraTexto("vogal", "replace");
+    const larguraTela = window.innerWidth;
+    if (larguraTela < 1280) scrollTo("secao-resultado");
 });
 botaoDescriptografar.addEventListener("click", () => {
     alteraTexto("replace", "vogal");
+    const larguraTela = window.innerWidth;
+    if (larguraTela < 1280) scrollTo("secao-resultado");
 });
 
 areaDoTexto.addEventListener("input", () => {
