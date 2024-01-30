@@ -220,7 +220,7 @@ h1,h2 {
     position: absolute;
     color: #65B741;
     font-size: .9rem;
-    top: -2rem;
+    bottom: 8rem;
     animation: animacaoSubirTexto 1.5s ease;
 }
 
