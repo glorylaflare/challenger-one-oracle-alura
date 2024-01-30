@@ -45,4 +45,4 @@ Todo o desenvolvimento foi feito através da metodologia mobile-first.
 <img src="./public/screenshoots/desktop/desktop_lm.png">
 <img src="./public/screenshoots/desktop/desktop_dm.png">
 
-Confira todas as imagens do projeto <a href="./public/screenshoots/">aqui.</a>
+Confira todas as imagens do projeto <a href="https://github.com/glorylaflare/challenger-one-oracle-alura/tree/main/public/screenshoots">aqui.</a>
