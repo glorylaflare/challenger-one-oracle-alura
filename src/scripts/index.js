@@ -145,11 +145,13 @@ areaDoTexto.addEventListener("input", () => {
 botaoLimpar.addEventListener("click", () => {
     document.querySelector("#area-do-texto").value = "";
     botaoLimpar.style.display = "none";
+    botaoTransformaTexto.style.display = "none";
 });
 botaoTransformaTexto.addEventListener("click", () => {
     const conteudoTexto = document.querySelector("#area-do-texto").value;
     const textoMinusculo = conteudoTexto.toLowerCase();
     document.querySelector("#area-do-texto").value = textoMinusculo;
+    botaoTransformaTexto.style.display = "none";
 });
 
 document.addEventListener("click", (e) => {
