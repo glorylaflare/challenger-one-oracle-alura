@@ -21,7 +21,7 @@
                 <ul class="cabecalho__menu__opcoes">
                     <li class="cabecalho__menu__opcoes__item" id="scroll-to-faq">
                     Dúvidas</li>
-                    <li class="cabecalho__menu__opcoes__item toggle" id="toggle-mode">
+                    <li class="cabecalho__menu__opcoes__item toggle" id="toggle-mode" title="Mudar de tema">
                         <span class="material-symbols-outlined" id="icon-mode">
                             light_mode
                         </span></li>
@@ -41,11 +41,13 @@
                         cols="40" 
                         rows="12"
                         placeholder="Digite seu texto aqui..."></textarea>
-                        <button class="conteudo__decodificador__limpar" id="btn-limpar" style="display: none;">
-                            <span class="material-symbols-outlined">
-                                delete
-                            </span>
-                        </button>
+                        <div class="conteudo__decodificador__botoes">
+                            <button class="conteudo__decodificador__limpar" id="btn-limpar" style="display: none;" title="Limpar">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                            </button>
+                        </div>
                     </div>
                     <p class="conteudo__decodificador__aviso">
                         <svg class="svg__aviso" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,22 +101,22 @@
                 <p class="redes__sociais__titulo">Redes Sociais:</p>
                 <ul class="redes__sociais__botoes">
                     <li>
-                        <button class="rede__sociais__botao">
+                        <button class="rede__sociais__botao" title="LinkedIn">
                             <a href="https://www.linkedin.com/in/marcelogjr/">
                                 <i class="fa-brands fa-linkedin-in"></i></a>
                         </button></li>
                     <li>
-                        <button class="rede__sociais__botao">
+                        <button class="rede__sociais__botao" title="Instagram">
                             <a href="https://www.instagram.com/glorylaflare/">
                                 <i class="fa-brands fa-instagram"></i></a>
                         </button></li>
                     <li>
-                        <button class="rede__sociais__botao">
+                        <button class="rede__sociais__botao" title="Github">
                             <a href="https://github.com/glorylaflare">
                                 <i class="fa-brands fa-github"></i></a>
                         </button></li>
                     <li>
-                        <button class="rede__sociais__botao">
+                        <button class="rede__sociais__botao" title="Codepen">
                             <a href="https://codepen.io/glorylaflare">
                                 <i class="fa-brands fa-codepen"></i></a>
                         </button></li>
