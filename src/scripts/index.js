@@ -43,6 +43,7 @@ const botaoCriptografar = document.querySelector("#btn-criptografar");
 const botaoDescriptografar = document.querySelector("#btn-descriptografar");
 const botaoLimpar = document.querySelector("#btn-limpar");
 const botaoCopiar = document.querySelector("#btn-copiar");
+const botaoTransformaTexto = document.querySelector("#btn-minusculas");
 const mostrarTexto = document.querySelector("#texto-decodificado");
 const mensagemAviso = document.querySelector("#texto-aviso");
 const svgAviso = document.querySelector(".svg__aviso path");
@@ -110,7 +111,7 @@ function alteraTexto(parametro_de, parametro_para) {
         if(verificaMinusculas.test(texto)) {
             const vogais = arrayVogais.filter((vogal) => {
                 return texto.includes(vogal[parametro_de]);
-            }); // A constante "vogais" gera um array de objetos
+            });
             for (let i = 0; i < vogais.length; i++) {
                 const elemento = vogais[i][parametro_de];
                 novoTexto = novoTexto.replaceAll(elemento, vogais[i][parametro_para]);
@@ -134,11 +135,21 @@ botaoDescriptografar.addEventListener("click", () => {
 areaDoTexto.addEventListener("input", () => {
     if(areaDoTexto.value.length > 0) botaoLimpar.style.display = "block";
     else botaoLimpar.style.display = "none";
+
+    const verificaMaiusculas = /[A-Z]/;
+
+    if(verificaMaiusculas.test(areaDoTexto.value)) botaoTransformaTexto.style.display = "block";
+    else botaoTransformaTexto.style.display = "none";
 });
 
 botaoLimpar.addEventListener("click", () => {
     document.querySelector("#area-do-texto").value = "";
     botaoLimpar.style.display = "none";
+});
+botaoTransformaTexto.addEventListener("click", () => {
+    const conteudoTexto = document.querySelector("#area-do-texto").value;
+    const textoMinusculo = conteudoTexto.toLowerCase();
+    document.querySelector("#area-do-texto").value = textoMinusculo;
 });
 
 document.addEventListener("click", (e) => {
