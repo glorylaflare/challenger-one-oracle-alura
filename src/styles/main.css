@@ -9,7 +9,7 @@
     --cor-6: #d8dfe8;
     --cor-7: #db9224;
 
-    --cor-box-shadow: rgba(0, 0, 0, 0.15);
+    --box-shadow: 0 .8rem 10rem -1rem rgba(0, 0, 0, .15);
 }
 
 :root[data-theme="dark"] {
@@ -21,7 +21,7 @@
     --cor-6: #272727;
     --cor-7: #f0eed6;
 
-    --cor-box-shadow: rgba(90, 90, 90, 0.25);
+    --box-shadow: 0 .8rem 4rem -1rem rgba(99, 168, 233, 0.05);
 }
 
 * {
@@ -260,7 +260,7 @@ h1,h2 {
     padding: 2rem;
     border-radius: 2rem;
     gap: 1rem;
-    box-shadow: 0 .8rem 10rem -1rem var(--cor-box-shadow);
+    box-shadow: var(--box-shadow)
 }
 
 .conteudo__texto__decodificado__titulo {
@@ -282,7 +282,7 @@ h1,h2 {
     padding: 2rem;
     border-radius: 2rem;
     gap: 1rem;
-    box-shadow: 0 .6rem 1rem -.4rem var(--cor-box-shadow);
+    box-shadow: var(--box-shadow)
 }
 
 .conteudo__texto__decodificado__resultado__texto {
